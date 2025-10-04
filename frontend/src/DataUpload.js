@@ -40,10 +40,10 @@ function DataUpload({ onProcessComplete }) {
 
     try {
       // The API call to our FastAPI backend
-      const response = await fetch('http://127.0.0.1:8000/api/process-files/', {
-        method: 'POST',
-        body: formData,
-      });
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/process-files/`, {
+    method: 'POST',
+    body: formData,
+});
 
       if (!response.ok) {
         throw new Error('Something went wrong with the server.');
